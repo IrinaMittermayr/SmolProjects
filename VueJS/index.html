@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>MTD280 Example</title>
+<script src="lib/jquery-3.3.1.min.js"></script>
+<script src="lib/underscore-min.js"></script>
+<script src="lib/backbone-min.js"></script>
+<script src="lib/backbone.localStorage-min.js"></script>
+
+<style>
+
+#appDiv .firstnameEdit, #appDiv .lastnameEdit {
+	display: none;
+}
+
+#appDiv li.editing .firstnameEdit, #appDiv li.editing .lastnameEdit  {
+	display: inline;
+}
+
+
+#appDiv li.editing .viewfirst, #appDiv li.editing .viewlast {
+	display: none;
+}
+
+</style>
+
+</head>
+
+<body>
+<h1>MTD280 Example: Backbone View</h1>
+
+<div id="appDiv">
+
+<ul id="entries"></ul><br>
+
+
+    <p>firstname: </p>
+    <textarea id="firstname"></textarea><br>
+    <p>lastname: </p>
+    <textarea id="lastname"></textarea><br>
+<button id="save">Save</button>
+<button id="clear">Clear</button>
+
+</div>
+
+<hr>
+<p style="font-size:small">
+MTD280 Online Multimedia<br>
+<a href="http://www.fh-ooe.at/mtd">Media Technology and Design</a>
+</p>
+
+<script type="text/template" id="entryTemplate">
+<button class="delete">x</button>
+
+
+<span class="viewfirst"><%- firstname %></span> : <span class="viewlast"> <%- lastname %> </span>
+<input class="firstnameEdit" type="text" value="<%= firstname %>">
+<input class="lastnameEdit" type="text" value="<%= lastname %>">
+
+
+</script>
+
+<script src="entry.js"></script>
+<script src="entryList.js"></script>
+<script src="entryView.js"></script>
+<script src="appView.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
